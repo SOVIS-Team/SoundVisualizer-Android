@@ -11,7 +11,7 @@ import java.net.URLEncoder
  */
 object ReportLink {
 
-    const val ISSUES_URL = "https://github.com/bibibic76/SoundVisualizer/issues/new"
+    const val ISSUES_URL = "https://github.com/SOVIS-Team/SoundVisualizer-Android/issues/new"
 
     /** 이슈 본문 끝에 붙는 네 줄. 사용자가 쓴 내용과 구분되게 앞에 빈 줄을 두고 붙인다. */
     fun environment(
