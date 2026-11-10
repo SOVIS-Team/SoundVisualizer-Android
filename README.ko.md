@@ -115,7 +115,7 @@
 
 SoundVisualizer는 Android 10 이상에서 돌아가는 오픈소스 APK 로 제공됩니다.
 
-1. **[GitHub Releases](https://github.com/bibibic76/SoundVisualizer/releases)** 페이지에 접속합니다.
+1. **[GitHub Releases](https://github.com/SOVIS-Team/SoundVisualizer-Android/releases)** 페이지에 접속합니다.
 2. 최신 버전의 `SoundVisualizer-vX.Y.Z.apk` 파일을 휴대폰으로 다운로드해 엽니다. 알 수 없는 앱 설치를 허용하는지 물으면 허용한 뒤 설치합니다.
 3. 앱을 엽니다. 튜토리얼이 먼저 뜨고, 홈 탭에서 다시 볼 수 있습니다.
 4. 홈에서 **실행**을 누르고 권한을 허용하면 오버레이가 켜집니다. 다른 앱 위에 표시, 오디오 녹음, 화면 녹화·전송 권한이 필요하며, 화면 녹화·전송은 안드로이드가 휴대폰 안의 소리를 이 방법으로만 넘겨주기 때문에 쓰고 화면 자체는 캡처하지 않습니다.
@@ -131,7 +131,7 @@ SoundVisualizer는 Android 10 이상에서 돌아가는 오픈소스 APK 로 제
 1. **요구 사항**: 최신 Android Studio, JDK 17, Android SDK(compileSdk 37). NDK 와 CMake 는 빌드할 때 맞는 버전을 받습니다.
 2. **리포지토리 클론**:
    ```bash
-   git clone https://github.com/bibibic76/SoundVisualizer.git
+   git clone https://github.com/SOVIS-Team/SoundVisualizer-Android.git
    ```
 3. 리포지토리 폴더에서 빌드하고 테스트합니다.
    ```bash

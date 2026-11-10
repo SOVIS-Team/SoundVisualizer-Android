@@ -115,7 +115,7 @@ The project is rigorously engineered for high-performance, real-time background 
 
 SoundVisualizer is provided as an open-source APK for Android 10 or later.
 
-1. Go to the **[GitHub Releases](https://github.com/bibibic76/SoundVisualizer/releases)** page.
+1. Go to the **[GitHub Releases](https://github.com/SOVIS-Team/SoundVisualizer-Android/releases)** page.
 2. Download the latest `SoundVisualizer-vX.Y.Z.apk` file to your phone and open it. Allow installing unknown apps if asked, then install.
 3. Open the app. The tutorial appears first, and you can open it again from the Home tab.
 4. Tap **Start** on Home and allow the permissions to activate the overlay: display over other apps, audio recording, and screen recording or casting, which Android requires to share the phone's own sound. The screen itself is never captured.
@@ -131,7 +131,7 @@ To build from source to modify the code or contribute to the project:
 1. **Prerequisites**: The latest Android Studio, JDK 17, and the Android SDK (compileSdk 37). The matching NDK and CMake are downloaded during the build.
 2. **Clone the repository**:
    ```bash
-   git clone https://github.com/bibibic76/SoundVisualizer.git
+   git clone https://github.com/SOVIS-Team/SoundVisualizer-Android.git
    ```
 3. Build and test from the repository folder:
    ```bash
