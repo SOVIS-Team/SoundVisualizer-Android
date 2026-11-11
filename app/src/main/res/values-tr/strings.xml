@@ -50,7 +50,7 @@
     <string name="tutorial_type_ambient">Ortam sesleri</string>
     <string name="tutorial_type_ambient_examples">Müzik, yağmur ve diğer tüm sesler</string>
     <string name="tutorial_type_speech">İnsan sesleri</string>
-    <string name="tutorial_type_speech_examples">İnsan sesleri</string>
+    <string name="tutorial_type_speech_examples">Konuşma</string>
     <string name="tutorial_type_danger">Tehlike sesleri</string>
     <string name="tutorial_type_danger_examples">Silah sesi, patlama, siren</string>
     <string name="tutorial_vibration_title">Tehlike sesleri titreşimle de bildirilir</string>
