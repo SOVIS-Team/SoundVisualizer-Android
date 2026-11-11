@@ -105,27 +105,15 @@ enum class TutorialPage(@StringRes val title: Int, @StringRes val body: Int?, va
     Start(R.string.tutorial_start_title, null, null);
 
     /**
-     * 지금 모드에 맞는 제목. 외부 사운드 모드면 방향 쪽은 아직 가운데로만 그린다고 말한다(#268).
-     * 그 모드는 마이크 입력을 좌우 같게 만들어(`toDualMono`) 모든 소리를 가운데로 그린다. 좌우를 구분한다는 제목은
-     * 그 모드에서 거짓이고, 왼쪽에서 부르는 소리를 "앞에서 난 소리" 로 읽게 만든다.
+     * 지금 모드에 맞는 설명. 외부 사운드 모드면 소리 쪽은 마이크로 주변 소리를 그린다고 설명한다(#226).
+     * "폰에서 재생되는 소리만, 주변 소리는 듣지 않는다" 는 그 모드에서 거짓이다.
+     *
+     * 방향 쪽은 모드와 상관없이 좌우를 구분한다고 설명한다(#444). 외부 사운드 모드에서는 가운데로만 그린다고 따로
+     * 말했었지만(#268), 같은 앱이 폰마다 다른 설명을 보여 헷갈린다는 의견에 따라 하나로 맞췄다.
      */
     @StringRes
-    fun titleFor(externalSoundMode: Boolean): Int =
-        if (this == Direction && externalSoundMode) R.string.tutorial_direction_title_external else title
-
-    /**
-     * 지금 모드에 맞는 설명. 외부 사운드 모드면 다음 두 쪽을 그 모드에 맞게 바꾼다.
-     * - 소리 쪽: 마이크로 주변 소리를 그린다고 설명한다(#226). "폰에서 재생되는 소리만, 주변 소리는 듣지 않는다" 는
-     *   그 모드에서 거짓이다.
-     * - 방향 쪽: 아직 가운데로만 그린다고 설명한다([titleFor], #268).
-     */
-    @StringRes
-    fun bodyFor(externalSoundMode: Boolean): Int? = when {
-        !externalSoundMode -> body
-        this == Sound -> R.string.tutorial_sound_body_external
-        this == Direction -> R.string.tutorial_direction_body_external
-        else -> body
-    }
+    fun bodyFor(externalSoundMode: Boolean): Int? =
+        if (externalSoundMode && this == Sound) R.string.tutorial_sound_body_external else body
 }
 
 /**
@@ -476,7 +464,7 @@ private fun PageText(page: TutorialPage, time: MutableFloatState, titleFocus: Fo
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
         val externalSoundMode by SettingsManager.externalSoundMode.collectAsState()
         Text(
-            stringResource(page.titleFor(externalSoundMode)),
+            stringResource(page.title),
             fontSize = 26.sp, lineHeight = 34.sp, fontWeight = FontWeight.Bold, color = PrimaryTextColor,
             textAlign = TextAlign.Center,
             // 쪽이 바뀌면 여기로 초점이 온다(TutorialScreen). 제목이라 제목끼리 건너뛰며 훑을 수도 있다.

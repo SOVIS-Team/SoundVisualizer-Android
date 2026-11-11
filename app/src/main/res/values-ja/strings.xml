@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">ゲームや動画の音が、画面の端に沿って描かれます。音が大きいほど、大きく描かれます。表示するのは、スマートフォンで再生中の音だけです。周囲の音は拾いません。</string>
     <string name="tutorial_sound_body_external">外部音モードがオンなので、マイクで聞き取った周囲の音が画面の端に沿って描かれます。音が大きいほど、大きく描かれます。このモードでは、スマートフォンで再生中の音は表示しません。</string>
     <string name="tutorial_direction_title">左右を区別できます</string>
-    <string name="tutorial_direction_title_external">方向は今のところ中央に表示します</string>
     <string name="tutorial_direction_body">左からの音は画面の左側が、右からの音は右側が大きく描かれます。前後は区別できません。</string>
-    <string name="tutorial_direction_body_external">外部音モードでは、音がどちらから来るかはまだ表示せず、すべての音を中央に描きます。スマートフォンで再生中の音では、左からの音は画面の左側が大きく描かれます。</string>
     <string name="tutorial_types_title">音の種類を色で区別します</string>
     <string name="tutorial_types_body">AI が音を3種類に分類し、それぞれ違う色で描きます。色は「設定」タブの「詳細設定」で変更できます。</string>
     <string name="tutorial_type_ambient">環境音</string>

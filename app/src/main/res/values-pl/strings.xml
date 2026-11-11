@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">Dźwięk z gry lub filmu jest rysowany wzdłuż krawędzi ekranu. Im głośniejszy dźwięk, tym większa grafika. Pokazywany jest tylko dźwięk odtwarzany na telefonie. Dźwięki wokół Ciebie nie są wychwytywane.</string>
     <string name="tutorial_sound_body_external">Tryb dźwięków zewnętrznych jest włączony, więc dźwięki wokół Ciebie, które słyszy mikrofon, są rysowane wzdłuż krawędzi ekranu. Im głośniejszy dźwięk, tym większa grafika. W tym trybie dźwięk odtwarzany na telefonie nie jest pokazywany.</string>
     <string name="tutorial_direction_title">Odróżnia lewą stronę od prawej</string>
-    <string name="tutorial_direction_title_external">Kierunek na razie pośrodku</string>
     <string name="tutorial_direction_body">Dźwięk z lewej strony powiększa grafikę po lewej, a dźwięk z prawej – po prawej. Aplikacja nie odróżnia przodu od tyłu.</string>
-    <string name="tutorial_direction_body_external">W trybie dźwięków zewnętrznych aplikacja nie pokazuje jeszcze, skąd dochodzi dźwięk, i rysuje wszystkie dźwięki pośrodku. Przy dźwięku z telefonu dźwięk z lewej strony powiększa grafikę po lewej.</string>
     <string name="tutorial_types_title">Każdy rodzaj dźwięku ma swój kolor</string>
     <string name="tutorial_types_body">AI dzieli dźwięki na trzy rodzaje i rysuje każdy w innym kolorze. Kolory możesz zmienić w widoku „Szczegółowe” na karcie „Ustawienia”.</string>
     <string name="tutorial_type_ambient">Dźwięki otoczenia</string>

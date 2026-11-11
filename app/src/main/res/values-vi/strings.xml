@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">Âm thanh từ trò chơi hoặc video được vẽ dọc theo các cạnh màn hình. Âm thanh càng lớn thì đồ họa càng lớn. Chỉ âm thanh đang phát trên điện thoại mới được hiển thị. Ứng dụng không thu âm thanh xung quanh bạn.</string>
     <string name="tutorial_sound_body_external">Chế độ âm thanh bên ngoài đang bật, nên âm thanh xung quanh bạn mà micrô thu được sẽ được vẽ dọc theo các cạnh màn hình. Âm thanh càng lớn thì đồ họa càng lớn. Ở chế độ này, âm thanh đang phát trên điện thoại không được hiển thị.</string>
     <string name="tutorial_direction_title">Phân biệt trái và phải</string>
-    <string name="tutorial_direction_title_external">Hiện chỉ vẽ hướng ở giữa</string>
     <string name="tutorial_direction_body">Âm thanh từ bên trái được vẽ lớn hơn ở bên trái, âm thanh từ bên phải được vẽ lớn hơn ở bên phải. Ứng dụng không phân biệt được phía trước và phía sau.</string>
-    <string name="tutorial_direction_body_external">Trong Chế độ âm thanh bên ngoài, ứng dụng chưa cho biết âm thanh đến từ hướng nào và vẽ mọi âm thanh ở giữa. Với âm thanh phát trên điện thoại, âm thanh từ bên trái được vẽ lớn hơn ở bên trái.</string>
     <string name="tutorial_types_title">Mỗi loại âm thanh có một màu riêng</string>
     <string name="tutorial_types_body">AI phân loại âm thanh thành ba loại và vẽ mỗi loại bằng một màu riêng. Bạn có thể đổi màu ở phần “Chi tiết” trong thẻ Cài đặt.</string>
     <string name="tutorial_type_ambient">Môi trường</string>
