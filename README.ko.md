@@ -8,7 +8,7 @@
 
 <img width="1024" height="818" alt="SoundVisualizer" src="docs/images/readme_logo.png" />
 
-<img width="1024" alt="휴대폰에서 본 SoundVisualizer: 환경음, 대화음, 위협음, 왼쪽에서 나는 소리, 오른쪽에서 나는 소리" src="docs/images/readme_banner.png" />
+<img width="1024" alt="휴대폰에서 본 SoundVisualizer: 환경음, 사람 소리, 위협음, 왼쪽에서 나는 소리, 오른쪽에서 나는 소리" src="docs/images/readme_banner.png" />
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
@@ -23,7 +23,7 @@
 <br/>
 
 > **SoundVisualizer**는 휴대폰에서 재생되는 오디오를 실시간으로 캡처하여 방향·크기·의미를 그래픽 오버레이와 진동으로 변환하는 안드로이드 애플리케이션입니다. 
-단순한 파형 시각화를 넘어, **YAMNet**과 **ONNX Runtime** 기반의 AI 사운드 분류기를 내장하여 현재 재생 중인 소리의 종류(환경음, 대화음, 위협음)를 실시간으로 인지하고 시각·진동 피드백을 제공합니다.
+단순한 파형 시각화를 넘어, **YAMNet**과 **ONNX Runtime** 기반의 AI 사운드 분류기를 내장하여 현재 재생 중인 소리의 종류(환경음, 사람 소리, 위협음)를 실시간으로 인지하고 시각·진동 피드백을 제공합니다.
 
 ---
 
@@ -69,13 +69,13 @@
 - 휴대폰 소리는 두 채널이라 좌우는 구분하지만 앞뒤는 구분하지 못합니다. 화면 위·아래쪽 그래픽은 양쪽에서 비슷하게 들리는 소리와 공간감을 나타냅니다.
 
 ### 4. AI 실시간 사운드 분류 (ONNX & YAMNet)
-- **3-Class 분류 체계**: 모든 소리를 `Ambient(환경음)`, `Speech(대화음)`, `Danger(위협음)` 3가지로 분석하여 카테고리별로 지정된 UI 색상으로 동적 시각 피드백을 제공합니다. 색상은 커스터마이징이 가능하고, 종류마다 표시를 켜고 끌 수 있습니다.
+- **3-Class 분류 체계**: 모든 소리를 `Ambient(환경음)`, `Speech(사람 소리)`, `Danger(위협음)` 3가지로 분석하여 카테고리별로 지정된 UI 색상으로 동적 시각 피드백을 제공합니다. 색상은 커스터마이징이 가능하고, 종류마다 표시를 켜고 끌 수 있습니다.
 - **위협 단서**: 사이렌, 경보, 폭발음, 폭죽, 경적, 깨지는 소리 같은 경고음은 모델의 상위 후보 다섯 개 안에(5% 이상) 들기만 해도 `위협음`으로 봅니다. 음악이나 게임 소리에 묻혀도 놓치지 않기 위해서입니다. 말소리가 더 크게 들릴 때처럼 오경보가 나기 쉬운 몇 가지 경우는 제외합니다.
-- **흔들리지 않는 색**: `위협음`은 조건을 넘는 첫 결과에 바로 바뀌고, `대화음`과 `환경음`은 두 번 연달아 같아야 바뀌어 색이 깜빡이지 않습니다. 조용한 동안에는 AI 가 쉬고, 소리가 나면 바로 다시 듣습니다.
+- **흔들리지 않는 색**: `위협음`은 조건을 넘는 첫 결과에 바로 바뀌고, `사람 소리`와 `환경음`은 두 번 연달아 같아야 바뀌어 색이 깜빡이지 않습니다. 조용한 동안에는 AI 가 쉬고, 소리가 나면 바로 다시 듣습니다.
 - **늦게 온 위협음**: AI 판정이 나오기 전에 끝나 버리는 짧은 `위협음`도 그 소리를 나던 때의 크기로 그립니다.
 
 ### 5. 소리마다 종류 정하기 (분류 탭)
-- AI 가 알아듣는 소리 521개를 비슷한 것끼리 묶어 보여 주고, 묶음마다(고급 모드에서는 소리마다) `환경음`, `대화음`, `위협음` 가운데 무엇으로 볼지 선택합니다.
+- AI 가 알아듣는 소리 521개를 비슷한 것끼리 묶어 보여 주고, 묶음마다(고급 모드에서는 소리마다) `환경음`, `사람 소리`, `위협음` 가운데 무엇으로 볼지 선택합니다.
 - 이름으로 찾고, 종류나 바꾼 소리로 거르고, 한 번에 모두 되돌릴 수 있습니다. 바꾼 것은 AI 에 바로 반영됩니다.
 
 ### 6. 진동 알림
@@ -115,7 +115,7 @@
 
 SoundVisualizer는 Android 10 이상에서 돌아가는 오픈소스 APK 로 제공됩니다.
 
-1. **[GitHub Releases](https://github.com/bibibic76/SoundVisualizer/releases)** 페이지에 접속합니다.
+1. **[GitHub Releases](https://github.com/SOVIS-Team/SoundVisualizer-Android/releases)** 페이지에 접속합니다.
 2. 최신 버전의 `SoundVisualizer-vX.Y.Z.apk` 파일을 휴대폰으로 다운로드해 엽니다. 알 수 없는 앱 설치를 허용하는지 물으면 허용한 뒤 설치합니다.
 3. 앱을 엽니다. 튜토리얼이 먼저 뜨고, 홈 탭에서 다시 볼 수 있습니다.
 4. 홈에서 **실행**을 누르고 권한을 허용하면 오버레이가 켜집니다. 다른 앱 위에 표시, 오디오 녹음, 화면 녹화·전송 권한이 필요하며, 화면 녹화·전송은 안드로이드가 휴대폰 안의 소리를 이 방법으로만 넘겨주기 때문에 쓰고 화면 자체는 캡처하지 않습니다.
@@ -131,7 +131,7 @@ SoundVisualizer는 Android 10 이상에서 돌아가는 오픈소스 APK 로 제
 1. **요구 사항**: 최신 Android Studio, JDK 17, Android SDK(compileSdk 37). NDK 와 CMake 는 빌드할 때 맞는 버전을 받습니다.
 2. **리포지토리 클론**:
    ```bash
-   git clone https://github.com/bibibic76/SoundVisualizer.git
+   git clone https://github.com/SOVIS-Team/SoundVisualizer-Android.git
    ```
 3. 리포지토리 폴더에서 빌드하고 테스트합니다.
    ```bash
