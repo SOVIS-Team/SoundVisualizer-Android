@@ -72,6 +72,7 @@ Change what you see without switching away from the game or video you are watchi
 - **3-Class Detection**: Analyzes all incoming audio into `Ambient`, `Speech` (human sounds), and `Danger` categories. Each category triggers independent, customizable UI colors and can be shown or hidden on its own.
 - **Warning cues**: Sirens, alarms, explosions, fireworks, horns, breaking glass and similar warning sounds count as `Danger` even when they are only among the model's top five candidates (at 5% or more), so music or game audio can't drown them out. A few cases prone to false alarms, such as when speech is louder, are excluded.
 - **Stable colors**: `Danger` appears on the first qualifying result; `Human sounds` and `Ambient` need two in a row, so the color doesn't flicker. The AI pauses while it's quiet and resumes as soon as sound returns.
+- **Faster human sounds**: When a voice starts, a small voice detector (Silero VAD) checks the newest audio and can show `Human sounds` one step (about 0.25 s) earlier. It only changes what you see; vibration, `Danger` decisions and your choices in the Sounds tab stay as they are.
 - **Late danger**: Even a short `Danger` sound that ends before the AI decides is drawn at the size it had.
 
 ### 5. Choose How Each Sound Counts (Sounds Tab)
