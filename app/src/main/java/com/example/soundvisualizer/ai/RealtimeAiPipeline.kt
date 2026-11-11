@@ -74,6 +74,19 @@ class RealtimeAiPipeline private constructor(
 
     companion object {
         const val AI_PREDICT_INTERVAL_MS = 250L
+
+        /** 조기 표시(#422)를 받아들이는 마감. 정규 추론이 소리를 가져간 때부터 잰다. 다음 정규 추론이 시작할 무렵이다. */
+        internal const val SPEECH_PREVIEW_ACCEPT_NS = AI_PREDICT_INTERVAL_MS * 1_000_000L
+
+        /**
+         * 조기 표시가 사라지는 때. 정규 추론이 소리를 가져간 때부터 잰다. 다음 정규 결과가 오면 그 전에라도 사라진다.
+         *
+         * 다음 정규 결과는 250ms 뒤에 추론을 시작해 전처리와 추론이 끝나야 나온다. 처음 값 275ms 는 그 시간이 25ms 라는
+         * 가정이었고, 더 걸리는 폰에서는 조기 표시가 먼저 사라져 사람 소리 → 환경음 → 사람 소리로 깜빡인다(#456, Windows 판에서는
+         * 틱의 7~9% 로 측정). 그래서 추론이 100ms 걸려도 이어지게 350ms 로 둔다. 다음 정규 결과·위협음·사용자 지정은 지금처럼
+         * 바로 이기므로, 달라지는 것은 다음 틱이 무음으로 건너뛰어질 때 조기 표시가 75ms 더 남는 것뿐이다.
+         */
+        internal const val SPEECH_PREVIEW_EXPIRY_NS = 350_000_000L
         internal const val MIN_TICK_REST_MS = 100L
         private const val TAG = "RealtimeAiPipeline"
         private const val LOG_THROTTLE_MS = 2000L
@@ -182,6 +195,10 @@ class RealtimeAiPipeline private constructor(
 
     fun speechVerifierCallsForTest(): Long = speechWorker?.calls?.get() ?: 0
     internal fun beforeVerifierScoreForTest(hook: () -> Unit) { speechWorker?.beforeScoreForTest = hook }
+    /** 시험이 Silero 가 낸 확률을 바꿔 깨진 값(NaN 등)을 흉내 낸다. */
+    internal fun verifierScoreForTest(hook: (Float) -> Float) { speechWorker?.scoreForTest = hook }
+    fun speechVerifierResetsForTest(): Long = speechWorker?.resets?.get() ?: 0
+    fun speechVerifierFailedForTest(): Boolean = speechWorker?.failed?.get() ?: false
 
     private fun publishResult(result: AiClassificationResult?) {
         speechGate.regular(null)
@@ -433,7 +450,7 @@ class RealtimeAiPipeline private constructor(
             val cursor = audioBuffer.cursor()
             speechGate.regular(SileroPreviewGate.Candidate(
                 SpeechParent(result, decision.postDisplay, decision.postConfidence), cursor.frames,
-                snapshotBootNs + 250_000_000L, snapshotBootNs + 275_000_000L, cursor.generation))
+                snapshotBootNs + SPEECH_PREVIEW_ACCEPT_NS, snapshotBootNs + SPEECH_PREVIEW_EXPIRY_NS, cursor.generation))
         }
 
         if (log && debuggable) {

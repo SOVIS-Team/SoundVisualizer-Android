@@ -42,6 +42,27 @@ class SileroPreviewInstrumentedTest {
         }
     }
 
+    @Test fun brokenScoreResetsEvidenceAndKeepsTheOptionalOwnerRunning() {
+        // 깨진 확률(NaN)이 한 번 나와도 스레드가 끝나지 않고, 상태를 비운 뒤 다음 덩어리를 계속 본다(#456).
+        // 전에는 예외로 스레드가 끝나 캡처를 다시 시작할 때까지 조기 표시가 조용히 꺼졌다.
+        val app = InstrumentationRegistry.getInstrumentation().targetContext
+        RealtimeAiPipeline.create(app, 16000, 1, speechPreviewEnabled = true).use { pipeline ->
+            val scored = java.util.concurrent.atomic.AtomicInteger()
+            pipeline.verifierScoreForTest { probability -> if (scored.incrementAndGet() == 2) Float.NaN else probability }
+            val chunk = FloatArray(512) { kotlin.math.sin(it * .07).toFloat() * .4f }
+            val deadline = android.os.SystemClock.elapsedRealtime() + 10_000
+            // 덩어리를 하나씩 넣어 밀림 버리기(160ms)가 끼지 않게 한다. 넣을 때마다 스레드를 깨운다.
+            while (pipeline.speechVerifierCallsForTest() < 6 && android.os.SystemClock.elapsedRealtime() < deadline) {
+                pipeline.ingestInterleavedForTest(chunk, chunk.size)
+                Thread.sleep(20)
+            }
+            assertTrue("깨진 값 뒤에도 덩어리를 계속 봐야 한다: ${pipeline.speechVerifierCallsForTest()}", pipeline.speechVerifierCallsForTest() >= 6)
+            assertFalse("깨진 값 하나로 조기 표시가 꺼지면 안 된다", pipeline.speechVerifierFailedForTest())
+            // 처음 붙을 때 한 번, 깨진 값에서 한 번.
+            assertTrue("상태를 비워야 한다: ${pipeline.speechVerifierResetsForTest()}", pipeline.speechVerifierResetsForTest() >= 2)
+        }
+    }
+
     @Test fun stalledOptionalOwnerCannotBlockRegularDangerOrClose() {
         val app = InstrumentationRegistry.getInstrumentation().targetContext
         val entered = java.util.concurrent.CountDownLatch(1)

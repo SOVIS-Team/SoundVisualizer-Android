@@ -20,6 +20,7 @@ internal class SileroStreamWorker(context: Context, private val buffer: AiAudioB
     val failed = AtomicBoolean(false)
     val computeNs = AtomicLong()
     @Volatile var beforeScoreForTest: (() -> Unit)? = null
+    @Volatile var scoreForTest: ((Float) -> Float)? = null
     private val owner = Thread({
         Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
         try {
@@ -48,9 +49,17 @@ internal class SileroStreamWorker(context: Context, private val buffer: AiAudioB
                         val began = SystemClock.elapsedRealtimeNanos()
                         CaptureAudioMath.resampleStreamBlock(pcm, first, next, rate, output)
                         beforeScoreForTest?.invoke()
-                        val probability = model.score(output)
+                        val raw = model.score(output)
+                        val probability = scoreForTest?.invoke(raw) ?: raw
                         computeNs.addAndGet(SystemClock.elapsedRealtimeNanos() - began)
                         calls.incrementAndGet()
+                        if (!probability.isFinite() || probability !in 0f..1f) {
+                            // 깨진 값이 한 번 나오면 이어받는 상태도 믿을 수 없다. 스레드를 끝내면 캡처를 다시 시작할 때까지 조기 표시가
+                            // 조용히 꺼지므로(#456), 상태를 비우고 근거를 처음부터 다시 모은다. 이 덩어리는 건너뛴다.
+                            model.reset(); resets.incrementAndGet(); discontinuity()
+                            next += 512
+                            continue
+                        }
                         cursor = buffer.cursor()
                         if (cursor.generation == epoch && !closed.get())
                             block(epoch, next * rate / 16_000, (next + 512) * rate / 16_000,
