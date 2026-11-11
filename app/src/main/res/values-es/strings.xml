@@ -49,7 +49,7 @@
     <string name="tutorial_types_body">La IA clasifica los sonidos en tres tipos y dibuja cada uno con su propio color. Puedes cambiar los colores en “Detallado”, en la pestaña Ajustes.</string>
     <string name="tutorial_type_ambient">Sonido ambiente</string>
     <string name="tutorial_type_ambient_examples">Música, lluvia y todo lo demás</string>
-    <string name="tutorial_type_speech">Voz</string>
+    <string name="tutorial_type_speech">Sonidos humanos</string>
     <string name="tutorial_type_speech_examples">Personas que hablan</string>
     <string name="tutorial_type_danger">Peligro</string>
     <string name="tutorial_type_danger_examples">Disparos, explosiones, sirenas</string>
@@ -144,7 +144,7 @@
 
     <!-- Sound types -->
     <string name="ai_show_ambient">Mostrar sonido ambiente</string>
-    <string name="ai_show_speech">Mostrar voz</string>
+    <string name="ai_show_speech">Mostrar sonidos humanos</string>
     <string name="ai_show_danger">Mostrar peligro</string>
     <string name="ai_unavailable">La detección del tipo de sonido no funciona, así que todos los sonidos se muestran en el color del sonido ambiente. Prueba a apagar y volver a encender la visualización.</string>
     <string name="classify_title">Elige los tipos de sonido</string>
@@ -157,7 +157,7 @@
     <string name="classify_filter_all">Todos</string>
     <string name="classify_filter_changed">Cambiados</string>
     <string name="sound_type_ambient">Sonido ambiente</string>
-    <string name="sound_type_speech">Voz</string>
+    <string name="sound_type_speech">Sonidos humanos</string>
     <string name="sound_type_danger">Peligro</string>
     <string name="classify_type_default">%1$s (por defecto)</string>
     <string name="classify_changed_from">Por defecto: %1$s</string>
@@ -237,7 +237,7 @@
     <!-- Accessibility -->
     <string name="cd_pick_color">Abrir selector de color</string>
     <string name="cd_color_ambient">Color del sonido ambiente</string>
-    <string name="cd_color_speech">Color de la voz</string>
+    <string name="cd_color_speech">Color de los sonidos humanos</string>
     <string name="cd_color_danger">Color del sonido de peligro</string>
     <string name="cd_expand">Expandir</string>
     <string name="cd_collapse">Contraer</string>
@@ -310,12 +310,12 @@
     <string name="help_modes_notification">Mientras el visor esté encendido, puedes desplegar la notificación en curso para cambiar de modo sin abrir la app.</string>
 
     <string name="help_sound_title">Tipos de sonido y vibración</string>
-    <string name="help_sound_kinds">La IA clasifica el audio en sonido ambiente, voz y peligro. De forma predeterminada, el sonido ambiente se muestra en blanco, la voz en amarillo y el peligro en rojo. En la pestaña Ajustes puedes elegir si cada tipo se muestra o no, y cambiar su color en “Detallado”.</string>
+    <string name="help_sound_kinds">La IA clasifica el audio en sonido ambiente, sonidos humanos y peligro. De forma predeterminada, el sonido ambiente se muestra en blanco, los sonidos humanos en amarillo y el peligro en rojo. En la pestaña Ajustes puedes elegir si cada tipo se muestra o no, y cambiar su color en “Detallado”.</string>
     <string name="help_sound_classify_groups">En la pestaña Sonidos, los sonidos parecidos están agrupados y eliges de qué tipo es cada grupo. Por ejemplo, si cambias el grupo “Timbre de la puerta” a Peligro, cuando la IA reconozca un timbre de la puerta o golpes en la puerta, el sonido tendrá el color y la vibración de peligro. Eso sí, un sonido que tú cambias a Peligro solo participa en la votación de la IA sobre el tipo, así que no significa que cada timbre de la puerta se vaya a mostrar como peligro. Activa el modo avanzado para cambiar los sonidos uno a uno.</string>
     <string name="help_sound_danger">Cuando se detecta un sonido de peligro (como un disparo), el color cambia al instante en lugar de hacerlo poco a poco.</string>
     <string name="help_sound_haptic">La vibración te avisa aunque no estés mirando la pantalla. Al principio solo está activada para el peligro. Para cada tipo, puedes elegir “Apagada”, “Suave” o “Fuerte” en “Sencillo”, o el modo (Desactivada, Lenta, Media, Rápida, Continua) y la intensidad en “Detallado”.</string>
     <string name="help_sound_haptic_rule">Solo vibran los tipos que se muestran en pantalla. El teléfono vibra mientras dura un sonido de ese tipo y se detiene cuando termina. Media late cada medio segundo, Lenta a la mitad de ese ritmo y Rápida al doble, mientras que Continua vibra sin interrupción. En todos los modos la vibración mantiene la intensidad que elegiste.</string>
-    <string name="help_sound_haptic_external">En el modo de sonido externo, el teléfono solo comprueba si un sonido sigue en las pausas entre pulsos, para no confundir su propia vibración con un sonido. Por eso, puede seguir vibrando un momento después de que el sonido termine, normalmente menos de un segundo. Para que esas pausas sean lo bastante largas, en este modo lo más rápido que puedes elegir es Lenta para la voz y Media para el peligro, y el sonido ambiente no vibra, porque siempre hay algún sonido a tu alrededor. Los tipos configurados con un modo más rápido vibran con el más rápido permitido, y cuando desactivas el modo de sonido externo, vuelven a vibrar como los configuraste.</string>
+    <string name="help_sound_haptic_external">En el modo de sonido externo, el teléfono solo comprueba si un sonido sigue en las pausas entre pulsos, para no confundir su propia vibración con un sonido. Por eso, puede seguir vibrando un momento después de que el sonido termine, normalmente menos de un segundo. Para que esas pausas sean lo bastante largas, en este modo lo más rápido que puedes elegir es Lenta para los sonidos humanos y Media para el peligro, y el sonido ambiente no vibra, porque siempre hay algún sonido a tu alrededor. Los tipos configurados con un modo más rápido vibran con el más rápido permitido, y cuando desactivas el modo de sonido externo, vuelven a vibrar como los configuraste.</string>
 
     <string name="help_notes_title">Ten en cuenta</string>
     <string name="help_note_direction">La app distingue la izquierda de la derecha, pero no lo que está delante de lo que está detrás. Los gráficos de las partes superior e inferior de la pantalla representan los sonidos que se oyen por igual en ambos lados y la sensación de espacio.</string>
@@ -339,7 +339,7 @@
     <string name="help_faq_no_graphic_a_external">Comprueba que el micrófono no esté bloqueado. Durante una llamada, mientras otra app usa el micrófono o si el micrófono está bloqueado en Ajustes rápidos, no entra ningún sonido, y la pestaña Inicio y la notificación en curso te avisan. Si los sonidos suaves apenas se ven, sube la sensibilidad del micrófono en la pestaña Inicio. En la pestaña Ajustes, asegúrate también de que “Mostrar” no esté desactivado para el tipo de sonido que suena ahora y de que la Opacidad no esté demasiado baja en “Detallado”.</string>
     <string name="help_faq_no_vibration_q">No vibra.</string>
     <string name="help_faq_no_vibration_answer">En Ajustes, comprueba que “Mostrar” y “Vibrar” estén activados para ese tipo. Con la pantalla apagada se pausa de forma predeterminada; si quieres seguir recibiendo avisos por vibración, desactiva “Pausar con la pantalla apagada” en Batería, dentro de “Detallado” en Ajustes. Mientras la detección del tipo de sonido no funcione, solo vibran los sonidos fuertes, con el ajuste del peligro. Si la vibración está desactivada en los ajustes de tu teléfono, es posible que no vibre. Si estás visualizando el sonido de tu teléfono y el volumen multimedia está muy bajo, súbelo un poco.</string>
-    <string name="help_faq_no_vibration_answer_external">En Ajustes, comprueba que “Mostrar” y “Vibrar” estén activados para ese tipo. En el modo de sonido externo, el sonido ambiente, como el timbre de la puerta, no vibra. Para que vibre, cambia ese sonido a Peligro o Voz en la pestaña Sonidos. La vibración de la voz llega como máximo a Lenta, y la del peligro, a Media. Durante una llamada, mientras otra app usa el micrófono o si el micrófono está bloqueado en Ajustes rápidos, no entra ningún sonido, y la pestaña Inicio y la notificación en curso te avisan. Si bajaste la sensibilidad del micrófono de la pestaña Inicio por debajo de la marca predeterminada (la 4.ª desde la izquierda), vuelve a subirla. Los sonidos demasiado suaves para que la IA los oiga no vibran, aunque subas más la sensibilidad y los gráficos los muestren. En ese caso, deja el teléfono cerca de donde viene el sonido y no tapes el micrófono. Mientras la detección del tipo de sonido no funcione, solo vibran los sonidos fuertes, con el ajuste del peligro, y su vibración llega como máximo a Media. Lo que cuenta como fuerte depende entonces de la sensibilidad del micrófono. Si la vibración está desactivada en los ajustes de tu teléfono, es posible que no vibre.</string>
+    <string name="help_faq_no_vibration_answer_external">En Ajustes, comprueba que “Mostrar” y “Vibrar” estén activados para ese tipo. En el modo de sonido externo, el sonido ambiente, como el timbre de la puerta, no vibra. Para que vibre, cambia ese sonido a Peligro o Sonidos humanos en la pestaña Sonidos. La vibración de los sonidos humanos llega como máximo a Lenta, y la del peligro, a Media. Durante una llamada, mientras otra app usa el micrófono o si el micrófono está bloqueado en Ajustes rápidos, no entra ningún sonido, y la pestaña Inicio y la notificación en curso te avisan. Si bajaste la sensibilidad del micrófono de la pestaña Inicio por debajo de la marca predeterminada (la 4.ª desde la izquierda), vuelve a subirla. Los sonidos demasiado suaves para que la IA los oiga no vibran, aunque subas más la sensibilidad y los gráficos los muestren. En ese caso, deja el teléfono cerca de donde viene el sonido y no tapes el micrófono. Mientras la detección del tipo de sonido no funcione, solo vibran los sonidos fuertes, con el ajuste del peligro, y su vibración llega como máximo a Media. Lo que cuenta como fuerte depende entonces de la sensibilidad del micrófono. Si la vibración está desactivada en los ajustes de tu teléfono, es posible que no vibre.</string>
     <string name="help_faq_install_q">No se instala una versión nueva.</string>
     <string name="help_faq_install_a">Un APK compilado en otro lugar tiene una firma distinta y no se puede instalar sobre la app actual. Primero desinstala la app actual y luego instala la nueva. Esto restablecerá tus ajustes.</string>
     <string name="help_faq_battery_q">¿Consume mucha batería?</string>

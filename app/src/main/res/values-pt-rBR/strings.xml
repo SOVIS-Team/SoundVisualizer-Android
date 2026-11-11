@@ -49,7 +49,7 @@
     <string name="tutorial_types_body">A IA separa os sons em três tipos e desenha cada um com uma cor diferente. Você pode mudar as cores em “Detalhado”, na aba Ajustes.</string>
     <string name="tutorial_type_ambient">Sons ambientes</string>
     <string name="tutorial_type_ambient_examples">Música, chuva e todo o resto</string>
-    <string name="tutorial_type_speech">Vozes</string>
+    <string name="tutorial_type_speech">Sons humanos</string>
     <string name="tutorial_type_speech_examples">Pessoas falando</string>
     <string name="tutorial_type_danger">Sons de perigo</string>
     <string name="tutorial_type_danger_examples">Tiros, explosões, sirenes</string>
@@ -144,7 +144,7 @@
 
     <!-- Sound types -->
     <string name="ai_show_ambient">Mostrar sons ambientes</string>
-    <string name="ai_show_speech">Mostrar vozes</string>
+    <string name="ai_show_speech">Mostrar sons humanos</string>
     <string name="ai_show_danger">Mostrar sons de perigo</string>
     <string name="ai_unavailable">A detecção do tipo de som não está funcionando, então todos os sons aparecem na cor dos sons ambientes. Tente desligar e ligar a visualização de novo.</string>
     <string name="classify_title">Escolha os tipos de som</string>
@@ -157,7 +157,7 @@
     <string name="classify_filter_all">Todos</string>
     <string name="classify_filter_changed">Alterados</string>
     <string name="sound_type_ambient">Som ambiente</string>
-    <string name="sound_type_speech">Voz</string>
+    <string name="sound_type_speech">Sons humanos</string>
     <string name="sound_type_danger">Som de perigo</string>
     <string name="classify_type_default">%1$s (padrão)</string>
     <string name="classify_changed_from">Padrão: %1$s</string>
@@ -237,7 +237,7 @@
     <!-- Accessibility -->
     <string name="cd_pick_color">Abrir seletor de cores</string>
     <string name="cd_color_ambient">Cor dos sons ambientes</string>
-    <string name="cd_color_speech">Cor das vozes</string>
+    <string name="cd_color_speech">Cor dos sons humanos</string>
     <string name="cd_color_danger">Cor dos sons de perigo</string>
     <string name="cd_expand">Expandir</string>
     <string name="cd_collapse">Recolher</string>
@@ -310,12 +310,12 @@
     <string name="help_modes_notification">Enquanto a visualização estiver ligada, você pode expandir a notificação em andamento para trocar de modo sem abrir o app.</string>
 
     <string name="help_sound_title">Tipos de som e vibração</string>
-    <string name="help_sound_kinds">A IA separa os sons em três tipos: sons ambientes, vozes e sons de perigo. Por padrão, os sons ambientes aparecem em branco, as vozes em amarelo e os sons de perigo em vermelho. Na aba Ajustes, você pode escolher se cada tipo é mostrado e, em “Detalhado”, mudar a cor dele.</string>
+    <string name="help_sound_kinds">A IA separa os sons em três tipos: sons ambientes, sons humanos e sons de perigo. Por padrão, os sons ambientes aparecem em branco, os sons humanos em amarelo e os sons de perigo em vermelho. Na aba Ajustes, você pode escolher se cada tipo é mostrado e, em “Detalhado”, mudar a cor dele.</string>
     <string name="help_sound_classify_groups">Na aba Sons, os sons parecidos ficam agrupados e você escolhe o tipo de cada grupo. Por exemplo, se mudar o grupo “Campainha” para som de perigo, quando a IA reconhecer uma campainha ou uma batida na porta, o som passa a ter a cor e a vibração dos sons de perigo. Mas um som que você mesmo muda para som de perigo só participa da votação da IA sobre o tipo, então isso não quer dizer que toda campainha vai aparecer como som de perigo. Ative o modo avançado para mudar os sons um a um.</string>
     <string name="help_sound_danger">Quando um som de perigo (como um tiro) é detectado, a cor muda na hora, sem transição gradual.</string>
     <string name="help_sound_haptic">A vibração avisa mesmo quando você não está olhando para a tela. Por padrão, só os sons de perigo vibram. Para cada tipo, você pode escolher “Desligada”, “Fraca” ou “Forte” em “Simples”, ou o modo (Desligada, Lenta, Média, Rápida, Contínua) e a intensidade em “Detalhado”.</string>
     <string name="help_sound_haptic_rule">Só vibram os tipos mostrados na tela. O celular vibra enquanto durar um som desse tipo e para quando ele termina. Média pulsa a cada meio segundo, Lenta na metade desse ritmo e Rápida no dobro, enquanto Contínua vibra sem interrupção. Em todos os modos, a vibração mantém a intensidade que você escolheu.</string>
-    <string name="help_sound_haptic_external">No modo de som externo, o celular só verifica se ainda há som nas pausas entre os pulsos, para não confundir a própria vibração com som. Por isso, a vibração pode durar mais um instante depois que o som termina, geralmente menos de um segundo. Para que essas pausas sejam longas o bastante, neste modo o máximo que você pode escolher é Lenta para vozes e Média para sons de perigo, e os sons ambientes não vibram, porque sempre há algum som ao seu redor. Os tipos definidos com um modo mais rápido vibram no mais rápido permitido, e quando você desliga o modo de som externo, voltam a vibrar como você definiu.</string>
+    <string name="help_sound_haptic_external">No modo de som externo, o celular só verifica se ainda há som nas pausas entre os pulsos, para não confundir a própria vibração com som. Por isso, a vibração pode durar mais um instante depois que o som termina, geralmente menos de um segundo. Para que essas pausas sejam longas o bastante, neste modo o máximo que você pode escolher é Lenta para sons humanos e Média para sons de perigo, e os sons ambientes não vibram, porque sempre há algum som ao seu redor. Os tipos definidos com um modo mais rápido vibram no mais rápido permitido, e quando você desliga o modo de som externo, voltam a vibrar como você definiu.</string>
 
     <string name="help_notes_title">Bom saber</string>
     <string name="help_note_direction">O app diferencia esquerda e direita, mas não frente e trás. Os gráficos nas partes de cima e de baixo da tela representam sons que chegam igualmente dos dois lados e a sensação de espaço.</string>
@@ -339,7 +339,7 @@
     <string name="help_faq_no_graphic_a_external">Verifique se o microfone não está bloqueado. Durante uma ligação, enquanto outro app usa o microfone ou se o microfone estiver bloqueado nas Configurações rápidas, nenhum som chega, e a aba Início e a notificação em andamento avisam você. Se sons baixos quase não aparecerem, aumente a sensibilidade do microfone na aba Início. Confira também, na aba Ajustes, se a exibição do tipo de som atual não está desativada e, em “Detalhado”, se a Opacidade não está baixa demais.</string>
     <string name="help_faq_no_vibration_q">Não está vibrando.</string>
     <string name="help_faq_no_vibration_answer">Em Ajustes, confira se as opções “Mostrar” e “Vibrar” desse tipo estão ativadas. Com a tela desligada, o app pausa por padrão; para continuar recebendo avisos por vibração nesse momento, desative “Pausar com a tela desligada” em Bateria, em “Detalhado”, nos Ajustes. Enquanto a detecção do tipo de som não estiver funcionando, só os sons altos vibram, com o ajuste dos sons de perigo. Se a vibração estiver desativada nas configurações do celular, ele pode não vibrar. Se você estiver visualizando o som do celular e o volume de mídia estiver muito baixo, aumente-o um pouco.</string>
-    <string name="help_faq_no_vibration_answer_external">Em Ajustes, confira se as opções “Mostrar” e “Vibrar” desse tipo estão ativadas. No modo de som externo, os sons ambientes, como a campainha, não vibram. Para receber a vibração, mude esse som para som de perigo ou voz na aba Sons. A vibração vai até Lenta para vozes e até Média para sons de perigo. Durante uma ligação, enquanto outro app usa o microfone ou se o microfone estiver bloqueado nas Configurações rápidas, nenhum som chega, e a aba Início e a notificação em andamento avisam você. Se você deixou a sensibilidade do microfone da aba Início abaixo da posição padrão (a 4ª a partir da esquerda), aumente-a de novo. Sons baixos demais para a IA ouvir não vibram, mesmo que você aumente mais a sensibilidade e os gráficos os mostrem. Nesse caso, deixe o celular perto de onde vem o som e não cubra o microfone. Enquanto a detecção do tipo de som não estiver funcionando, só os sons altos vibram, com o ajuste dos sons de perigo, até Média. O que conta como alto depende, nessa situação, da sensibilidade do microfone. Se a vibração estiver desativada nas configurações do celular, ele pode não vibrar.</string>
+    <string name="help_faq_no_vibration_answer_external">Em Ajustes, confira se as opções “Mostrar” e “Vibrar” desse tipo estão ativadas. No modo de som externo, os sons ambientes, como a campainha, não vibram. Para receber a vibração, mude esse som para som de perigo ou som humano na aba Sons. A vibração vai até Lenta para sons humanos e até Média para sons de perigo. Durante uma ligação, enquanto outro app usa o microfone ou se o microfone estiver bloqueado nas Configurações rápidas, nenhum som chega, e a aba Início e a notificação em andamento avisam você. Se você deixou a sensibilidade do microfone da aba Início abaixo da posição padrão (a 4ª a partir da esquerda), aumente-a de novo. Sons baixos demais para a IA ouvir não vibram, mesmo que você aumente mais a sensibilidade e os gráficos os mostrem. Nesse caso, deixe o celular perto de onde vem o som e não cubra o microfone. Enquanto a detecção do tipo de som não estiver funcionando, só os sons altos vibram, com o ajuste dos sons de perigo, até Média. O que conta como alto depende, nessa situação, da sensibilidade do microfone. Se a vibração estiver desativada nas configurações do celular, ele pode não vibrar.</string>
     <string name="help_faq_install_q">Não consigo instalar a nova versão.</string>
     <string name="help_faq_install_a">Um APK gerado em outro lugar tem uma assinatura diferente e não pode ser instalado por cima do app atual. Desinstale o app atual primeiro e depois instale a nova versão. Isso redefine seus ajustes.</string>
     <string name="help_faq_battery_q">Gasta muita bateria?</string>

@@ -49,7 +49,7 @@
     <string name="tutorial_types_body">Die KI teilt Geräusche in drei Arten ein und stellt jede Art in einer eigenen Farbe dar. Die Farben können Sie im Tab „Einstellungen“ unter „Detailliert“ ändern.</string>
     <string name="tutorial_type_ambient">Umgebungsgeräusche</string>
     <string name="tutorial_type_ambient_examples">Musik, Regen und alles andere</string>
-    <string name="tutorial_type_speech">Stimmen</string>
+    <string name="tutorial_type_speech">Menschliche Laute</string>
     <string name="tutorial_type_speech_examples">Menschen, die sprechen</string>
     <string name="tutorial_type_danger">Gefahrengeräusche</string>
     <string name="tutorial_type_danger_examples">Schüsse, Explosionen, Sirenen</string>
@@ -144,7 +144,7 @@
 
     <!-- Sound types -->
     <string name="ai_show_ambient">Umgebungsgeräusche zeigen</string>
-    <string name="ai_show_speech">Stimmen zeigen</string>
+    <string name="ai_show_speech">Menschliche Laute zeigen</string>
     <string name="ai_show_danger">Gefahrengeräusche zeigen</string>
     <string name="ai_unavailable">Die Erkennung der Geräuscharten funktioniert nicht. Daher werden alle Geräusche in der Farbe für Umgebungsgeräusche angezeigt. Schalten Sie die Tonvisualisierung aus und wieder ein.</string>
     <string name="classify_title">Geräuscharten wählen</string>
@@ -157,7 +157,7 @@
     <string name="classify_filter_all">Alle</string>
     <string name="classify_filter_changed">Geändert</string>
     <string name="sound_type_ambient">Umgebungsgeräusche</string>
-    <string name="sound_type_speech">Stimmen</string>
+    <string name="sound_type_speech">Menschliche Laute</string>
     <string name="sound_type_danger">Gefahrengeräusche</string>
     <string name="classify_type_default">%1$s (Standard)</string>
     <string name="classify_changed_from">Standard: %1$s</string>
@@ -237,7 +237,7 @@
     <!-- Accessibility -->
     <string name="cd_pick_color">Farbauswahl öffnen</string>
     <string name="cd_color_ambient">Farbe für Umgebungsgeräusche</string>
-    <string name="cd_color_speech">Farbe für Stimmen</string>
+    <string name="cd_color_speech">Farbe für menschliche Laute</string>
     <string name="cd_color_danger">Farbe für Gefahrengeräusche</string>
     <string name="cd_expand">Aufklappen</string>
     <string name="cd_collapse">Zuklappen</string>
@@ -310,12 +310,12 @@
     <string name="help_modes_notification">Solange die Tonvisualisierung eingeschaltet ist, können Sie die Benachrichtigung während der Ausführung aufklappen und dort den Modus wechseln, ohne die App zu öffnen.</string>
 
     <string name="help_sound_title">Geräuscharten und Vibration</string>
-    <string name="help_sound_kinds">Die KI teilt Geräusche in drei Arten ein: Umgebungsgeräusche, Stimmen und Gefahrengeräusche. Standardmäßig sind Umgebungsgeräusche weiß, Stimmen gelb und Gefahrengeräusche rot. Im Tab „Einstellungen“ können Sie für jede Art festlegen, ob sie angezeigt wird, und unter „Detailliert“ ihre Farbe ändern.</string>
+    <string name="help_sound_kinds">Die KI teilt Geräusche in drei Arten ein: Umgebungsgeräusche, menschliche Laute und Gefahrengeräusche. Standardmäßig sind Umgebungsgeräusche weiß, menschliche Laute gelb und Gefahrengeräusche rot. Im Tab „Einstellungen“ können Sie für jede Art festlegen, ob sie angezeigt wird, und unter „Detailliert“ ihre Farbe ändern.</string>
     <string name="help_sound_classify_groups">Im Tab „Geräusche“ sind ähnliche Geräusche in Gruppen zusammengefasst, und Sie legen für jede Gruppe fest, zu welcher Art sie zählt. Ändern Sie zum Beispiel die Gruppe „Türklingel“ in Gefahrengeräusche, dann erhält ein Geräusch, das die KI als Türklingel oder Klopfen erkennt, die Farbe und Vibration für Gefahrengeräusche. Ein Geräusch, das Sie neu zu den Gefahrengeräuschen zählen, fließt allerdings nur in die Abstimmung der KI über die Art ein. Das heißt also nicht, dass jede Türklingel als Gefahrengeräusch angezeigt wird. Um Geräusche einzeln zu ändern, schalten Sie „Erweiterter Modus“ ein.</string>
     <string name="help_sound_danger">Wird ein Gefahrengeräusch (z. B. ein Schuss) erkannt, wechselt die Farbe sofort statt allmählich.</string>
     <string name="help_sound_haptic">Vibrationen machen Sie auch dann auf Geräusche aufmerksam, wenn Sie nicht auf den Bildschirm schauen. Standardmäßig ist die Vibration nur für Gefahrengeräusche eingeschaltet. Für jede Art können Sie unter „Einfach“ zwischen „Aus“, „Schwach“ und „Stark“ wählen oder unter „Detailliert“ einen Modus (Aus, Langsam, Mittel, Schnell, Dauerhaft) und eine Stärke festlegen.</string>
     <string name="help_sound_haptic_rule">Nur Geräuscharten, die auf dem Bildschirm angezeigt werden, lösen eine Vibration aus. Das Smartphone vibriert, solange ein Geräusch dieser Art anhält, und hört mit dem Geräusch auf. „Mittel“ pulsiert jede halbe Sekunde, „Langsam“ halb so schnell und „Schnell“ doppelt so schnell, während „Dauerhaft“ ohne Unterbrechung vibriert. In jedem Modus bleibt die Vibration bei der gewählten Stärke.</string>
-    <string name="help_sound_haptic_external">Im Modus für Außengeräusche prüft das Smartphone nur in den Pausen zwischen den Impulsen, ob ein Geräusch noch anhält, damit es seine eigene Vibration nicht für ein Geräusch hält. Deshalb kann es noch kurz weitervibrieren, nachdem ein Geräusch aufgehört hat – meist weniger als eine Sekunde. Damit diese Pausen lang genug bleiben, können Sie in diesem Modus für Stimmen höchstens „Langsam“ und für Gefahrengeräusche höchstens „Mittel“ wählen, und Umgebungsgeräusche vibrieren nicht, weil um Sie herum immer irgendein Geräusch zu hören ist. Geräuscharten mit einem schnelleren Modus vibrieren im schnellsten erlaubten Modus. Wenn Sie den Modus für Außengeräusche ausschalten, vibrieren sie wieder wie eingestellt.</string>
+    <string name="help_sound_haptic_external">Im Modus für Außengeräusche prüft das Smartphone nur in den Pausen zwischen den Impulsen, ob ein Geräusch noch anhält, damit es seine eigene Vibration nicht für ein Geräusch hält. Deshalb kann es noch kurz weitervibrieren, nachdem ein Geräusch aufgehört hat – meist weniger als eine Sekunde. Damit diese Pausen lang genug bleiben, können Sie in diesem Modus für menschliche Laute höchstens „Langsam“ und für Gefahrengeräusche höchstens „Mittel“ wählen, und Umgebungsgeräusche vibrieren nicht, weil um Sie herum immer irgendein Geräusch zu hören ist. Geräuscharten mit einem schnelleren Modus vibrieren im schnellsten erlaubten Modus. Wenn Sie den Modus für Außengeräusche ausschalten, vibrieren sie wieder wie eingestellt.</string>
 
     <string name="help_notes_title">Gut zu wissen</string>
     <string name="help_note_direction">Links und rechts werden unterschieden, vorne und hinten jedoch nicht. Grafiken am oberen und unteren Bildschirmrand zeigen Geräusche, die auf beiden Seiten gleich stark zu hören sind, sowie den Raumeindruck.</string>
@@ -339,7 +339,7 @@
     <string name="help_faq_no_graphic_a_external">Prüfen Sie, ob das Mikrofon blockiert ist. Während eines Anrufs, wenn eine andere App das Mikrofon verwendet oder wenn das Mikrofon in den Schnelleinstellungen blockiert ist, kommt kein Ton an, und der Tab „Startseite“ und die Benachrichtigung während der Ausführung weisen darauf hin. Wenn leise Geräusche kaum dargestellt werden, erhöhen Sie im Tab „Startseite“ die Mikrofonempfindlichkeit. Achten Sie außerdem im Tab „Einstellungen“ darauf, dass die Anzeige der aktuellen Geräuschart nicht ausgeschaltet und die „Deckkraft“ unter „Detailliert“ nicht zu niedrig eingestellt ist.</string>
     <string name="help_faq_no_vibration_q">Das Smartphone vibriert nicht.</string>
     <string name="help_faq_no_vibration_answer">Prüfen Sie in den Einstellungen, ob für die betreffende Art sowohl „… zeigen“ als auch „Vibrieren“ eingeschaltet sind. Bei ausgeschaltetem Bildschirm pausiert die App standardmäßig. Wenn Sie auch dann Vibrationen erhalten möchten, schalten Sie in den Einstellungen in der Ansicht „Detailliert“ unter „Akku“ die Option „Pause bei ausgeschaltetem Bildschirm“ aus. Solange die Erkennung der Geräuscharten nicht funktioniert, vibrieren nur laute Geräusche – mit der Einstellung für Gefahrengeräusche. Wenn die Vibration in den Einstellungen Ihres Smartphones deaktiviert ist, vibriert es möglicherweise nicht. Wenn Sie den Ton Ihres Smartphones visualisieren und die Medienlautstärke sehr niedrig eingestellt ist, drehen Sie sie etwas auf.</string>
-    <string name="help_faq_no_vibration_answer_external">Prüfen Sie in den Einstellungen, ob für die betreffende Art sowohl „… zeigen“ als auch „Vibrieren“ eingeschaltet sind. Im Modus für Außengeräusche vibrieren Umgebungsgeräusche wie eine Türklingel nicht. Damit ein solches Geräusch vibriert, ändern Sie es im Tab „Geräusche“ in Gefahrengeräusche oder Stimmen. Stimmen vibrieren höchstens im Modus „Langsam“ und Gefahrengeräusche höchstens im Modus „Mittel“. Während eines Anrufs, wenn eine andere App das Mikrofon verwendet oder wenn das Mikrofon in den Schnelleinstellungen blockiert ist, kommt kein Ton an, und der Tab „Startseite“ und die Benachrichtigung während der Ausführung weisen darauf hin. Wenn Sie die Mikrofonempfindlichkeit im Tab „Startseite“ unter die Standardstufe (die 4. von links) gesenkt haben, stellen Sie sie wieder höher. Geräusche, die für die KI zu leise sind, vibrieren nicht, auch wenn Sie die Empfindlichkeit weiter erhöhen und die Grafik sie darstellt. Legen Sie das Smartphone in diesem Fall in die Nähe der Stelle, von der das Geräusch kommt, und decken Sie das Mikrofon nicht ab. Solange die Erkennung der Geräuscharten nicht funktioniert, vibrieren nur laute Geräusche – mit der Einstellung für Gefahrengeräusche, höchstens im Modus „Mittel“. Was dabei als laut gilt, hängt von der Mikrofonempfindlichkeit ab. Wenn die Vibration in den Einstellungen Ihres Smartphones deaktiviert ist, vibriert es möglicherweise nicht.</string>
+    <string name="help_faq_no_vibration_answer_external">Prüfen Sie in den Einstellungen, ob für die betreffende Art sowohl „… zeigen“ als auch „Vibrieren“ eingeschaltet sind. Im Modus für Außengeräusche vibrieren Umgebungsgeräusche wie eine Türklingel nicht. Damit ein solches Geräusch vibriert, ändern Sie es im Tab „Geräusche“ in Gefahrengeräusche oder menschliche Laute. Menschliche Laute vibrieren höchstens im Modus „Langsam“ und Gefahrengeräusche höchstens im Modus „Mittel“. Während eines Anrufs, wenn eine andere App das Mikrofon verwendet oder wenn das Mikrofon in den Schnelleinstellungen blockiert ist, kommt kein Ton an, und der Tab „Startseite“ und die Benachrichtigung während der Ausführung weisen darauf hin. Wenn Sie die Mikrofonempfindlichkeit im Tab „Startseite“ unter die Standardstufe (die 4. von links) gesenkt haben, stellen Sie sie wieder höher. Geräusche, die für die KI zu leise sind, vibrieren nicht, auch wenn Sie die Empfindlichkeit weiter erhöhen und die Grafik sie darstellt. Legen Sie das Smartphone in diesem Fall in die Nähe der Stelle, von der das Geräusch kommt, und decken Sie das Mikrofon nicht ab. Solange die Erkennung der Geräuscharten nicht funktioniert, vibrieren nur laute Geräusche – mit der Einstellung für Gefahrengeräusche, höchstens im Modus „Mittel“. Was dabei als laut gilt, hängt von der Mikrofonempfindlichkeit ab. Wenn die Vibration in den Einstellungen Ihres Smartphones deaktiviert ist, vibriert es möglicherweise nicht.</string>
     <string name="help_faq_install_q">Eine neue Version lässt sich nicht installieren.</string>
     <string name="help_faq_install_a">Eine anderswo erstellte APK hat eine andere Signatur und kann daher nicht als Update für die vorhandene App installiert werden. Deinstallieren Sie zuerst die vorhandene App und installieren Sie dann die neue Version. Dabei werden Ihre Einstellungen zurückgesetzt.</string>
     <string name="help_faq_battery_q">Verbraucht die App viel Akku?</string>
