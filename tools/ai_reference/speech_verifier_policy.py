@@ -34,7 +34,7 @@ the first warmup block. Continuous blocks start at recording time zero.
         return None, 0, 0
     trigger = event["complete_ms"]
     deadline = min(event["snapshot_ms"] + 250., next_complete)
-    expiry = min(event["snapshot_ms"] + 275., next_complete)
+    expiry = min(event["snapshot_ms"] + 350., next_complete)  # product value since #456 (was 275)
     if deadline <= trigger:
         return None, 0, 0
     clock = 0. if mode == "continuous" else trigger

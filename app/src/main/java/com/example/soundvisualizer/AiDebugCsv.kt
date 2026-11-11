@@ -41,6 +41,8 @@ object AiDebugCsv {
         add("total_ms")
         add("mapping_override_count")
         add("mapping_signature")
+        // 화면에만 앞당겨 보인 사람 소리(조기 표시, #422)인지. 정규 결과와 섞어 세지 않게 한다. 새 열은 늘 끝에 더한다(#456).
+        add("speech_preview")
     }
 
     /** 머리글 한 줄. 파일을 새로 열 때 한 번만 쓴다. */
@@ -88,6 +90,7 @@ object AiDebugCsv {
         cells += millis(result.totalMs)
         cells += result.mappingOverrideCount.toString()
         cells += result.mappingSignature
+        cells += result.speechPreview.toString()
         return cells.joinToString(",") { quote(it) }
     }
 

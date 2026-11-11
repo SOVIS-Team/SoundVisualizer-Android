@@ -33,6 +33,23 @@ class AiDebugTextTest {
     private fun format(result: AiClassificationResult?, nowMs: Long = 1_200L) =
         AiDebugText.format(result, nowMs, level = 0.14f, shown = true, aiAvailable = true)
 
+    @Test fun `조기 표시의 첫 줄은 기본 사람 소리 이름 어느 것이 와도 한 줄에 든다`() {
+        // 첫 줄은 오버레이가 "종류 ● 이름 확신도" 로 붙인다(점과 양옆 여백을 세 칸으로 센다). 조기 표시는 종류가 "SPEECH ~PREVIEW" 로
+        // 길어지지만, 사용자 지정이 하나라도 있으면 쓰지 않으므로 이름은 늘 기본 종류가 사람 소리인 것이다. 그 가운데 가장 긴 이름
+        // (Hubbub, speech noise, speech babble)이 정확히 한 줄을 채운다. 사람 소리에 더 긴 이름을 넣으면 여기서 걸린다(#456).
+        val names = checkNotNull(javaClass.classLoader).getResourceAsStream("ai/yamnet_class_map.csv").use {
+            com.example.soundvisualizer.ai.YamnetCoarseClassifier.loadClassNames(checkNotNull(it))
+        }
+        val speech = names.filter { com.example.soundvisualizer.ai.YamnetThreeClassMapper.mapDisplayNameToCoarse(it) == AiClassification.SPEECH }
+        assertTrue("사람 소리 이름을 찾지 못했다", speech.size >= 30)
+        for (name in speech) {
+            val lines = format(result(coarse = AiClassification.SPEECH, display = name, confidence = 0.99f).copy(speechPreview = true))
+            assertEquals("SPEECH ~PREVIEW", lines.coarse)
+            val header = lines.coarse.length + 3 + lines.label.length + 1 + lines.confidence.length
+            assertTrue("$header: ${lines.coarse} ● ${lines.label} ${lines.confidence}", header <= AiDebugText.HUD_MAX_COLUMNS)
+        }
+    }
+
     @Test fun `종류와 원래 이름과 확신도를 보여준다`() {
         val lines = format(result())
         assertEquals("DANGER", lines.coarse)

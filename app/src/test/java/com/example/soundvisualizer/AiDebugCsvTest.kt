@@ -77,6 +77,20 @@ class AiDebugCsvTest {
     }
 
     @Test
+    fun `조기 표시인지는 맨 끝 칸에 적어 정규 결과와 가른다`() {
+        // 조기 표시(#422)는 화면에만 앞당겨 보인 사람 소리다. 정규 결과와 같은 줄 꼴로 적히면 채점할 때 섞여 세어진다(#456).
+        // 새 열은 늘 끝에 더한다. 앞 칸의 차례가 바뀌면 이미 모아 둔 기록과 맞지 않는다.
+        assertEquals("speech_preview", AiDebugCsv.COLUMNS.last())
+        assertEquals("mapping_signature", AiDebugCsv.COLUMNS[AiDebugCsv.COLUMNS.size - 2])
+
+        fun last(result: AiClassificationResult) = cells(
+            AiDebugCsv.row(result, nowMs = 1_500L, captureSource = CaptureSource.InternalPlayback, level = 0.4f, shown = true)
+        ).last()
+        assertEquals("false", last(result()))
+        assertEquals("true", last(result().copy(coarse = AiClassification.SPEECH, speechPreview = true)))
+    }
+
+    @Test
     fun `쉼표가 든 이름이 칸을 밀지 않는다`() {
         val row = AiDebugCsv.row(
             result(), nowMs = 1_500L, captureSource = CaptureSource.InternalPlayback, level = 0.4f, shown = true
