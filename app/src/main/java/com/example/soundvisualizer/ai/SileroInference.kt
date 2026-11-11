@@ -43,7 +43,7 @@ internal class SileroInference(context: Context) : AutoCloseable {
                         @Suppress("UNCHECKED_CAST") val next = out[1].value as Array<Array<FloatArray>>
                         for (layer in 0..1) for (i in 0 until 128) state.put(layer * 128 + i, next[layer][0][i])
                         block.copyInto(contextTail, 0, 448, 512)
-                        require(probability.isFinite() && probability in 0f..1f)
+                        // 유한하지 않거나 0~1 밖의 값도 그대로 돌려준다. 부르는 쪽(SileroStreamWorker)이 상태를 비우고 이어 간다(#456).
                         return probability
                     }
                 }
