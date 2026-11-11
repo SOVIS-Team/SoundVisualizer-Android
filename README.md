@@ -8,7 +8,7 @@
 
 <img width="1024" height="818" alt="SoundVisualizer" src="docs/images/readme_logo.png" />
 
-<img width="1024" alt="SoundVisualizer on a phone: ambient, speech, danger, sound from the left, and sound from the right" src="docs/images/readme_banner.png" />
+<img width="1024" alt="SoundVisualizer on a phone: ambient, human sounds, danger, sound from the left, and sound from the right" src="docs/images/readme_banner.png" />
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
@@ -23,7 +23,7 @@
 <br/>
 
 > **SoundVisualizer** is an Android application that captures the audio playing on your phone in real time and translates its direction, intensity, and meaning into a graphical overlay and vibration. 
-Going beyond simple waveform rendering, it integrates an AI sound classifier powered by **YAMNet** and **ONNX Runtime** to instantly identify the type of sound playing (ambient, speech, danger) and provide adaptive visual and haptic feedback.
+Going beyond simple waveform rendering, it integrates an AI sound classifier powered by **YAMNet** and **ONNX Runtime** to instantly identify the type of sound playing (ambient, human sounds, danger) and provide adaptive visual and haptic feedback.
 
 ---
 
@@ -69,13 +69,13 @@ Change what you see without switching away from the game or video you are watchi
 - Phone audio has two channels, so it tells left from right but not front from back. Graphics at the top and bottom of the screen show sound heard equally on both sides and a sense of space.
 
 ### 4. Real-Time AI Sound Classification (ONNX & YAMNet)
-- **3-Class Detection**: Analyzes all incoming audio into `Ambient`, `Speech`, and `Danger` categories. Each category triggers independent, customizable UI colors and can be shown or hidden on its own.
+- **3-Class Detection**: Analyzes all incoming audio into `Ambient`, `Speech` (human sounds), and `Danger` categories. Each category triggers independent, customizable UI colors and can be shown or hidden on its own.
 - **Warning cues**: Sirens, alarms, explosions, fireworks, horns, breaking glass and similar warning sounds count as `Danger` even when they are only among the model's top five candidates (at 5% or more), so music or game audio can't drown them out. A few cases prone to false alarms, such as when speech is louder, are excluded.
-- **Stable colors**: `Danger` appears on the first qualifying result; `Speech` and `Ambient` need two in a row, so the color doesn't flicker. The AI pauses while it's quiet and resumes as soon as sound returns.
+- **Stable colors**: `Danger` appears on the first qualifying result; `Human sounds` and `Ambient` need two in a row, so the color doesn't flicker. The AI pauses while it's quiet and resumes as soon as sound returns.
 - **Late danger**: Even a short `Danger` sound that ends before the AI decides is drawn at the size it had.
 
 ### 5. Choose How Each Sound Counts (Sounds Tab)
-- Browse the 521 sounds the AI knows, grouped by similarity, and choose whether each group (or, in advanced mode, each sound) counts as `Ambient`, `Speech`, or `Danger`.
+- Browse the 521 sounds the AI knows, grouped by similarity, and choose whether each group (or, in advanced mode, each sound) counts as `Ambient`, `Human sounds`, or `Danger`.
 - Search by name, filter by type or by the sounds you changed, and reset everything in one step. The AI follows your changes immediately.
 
 ### 6. Vibration Alerts

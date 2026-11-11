@@ -49,7 +49,7 @@
     <string name="tutorial_types_body">Yapay zeka, sesleri üç türe ayırır ve her türü farklı bir renkte çizer. Renkleri “Ayarlar” sekmesindeki “Ayrıntılı” görünümünden değiştirebilirsiniz.</string>
     <string name="tutorial_type_ambient">Ortam sesleri</string>
     <string name="tutorial_type_ambient_examples">Müzik, yağmur ve diğer tüm sesler</string>
-    <string name="tutorial_type_speech">Konuşma</string>
+    <string name="tutorial_type_speech">İnsan sesleri</string>
     <string name="tutorial_type_speech_examples">İnsan sesleri</string>
     <string name="tutorial_type_danger">Tehlike sesleri</string>
     <string name="tutorial_type_danger_examples">Silah sesi, patlama, siren</string>
@@ -144,7 +144,7 @@
 
     <!-- Sound types -->
     <string name="ai_show_ambient">Ortam seslerini göster</string>
-    <string name="ai_show_speech">Konuşmayı göster</string>
+    <string name="ai_show_speech">İnsan seslerini göster</string>
     <string name="ai_show_danger">Tehlike seslerini göster</string>
     <string name="ai_unavailable">Ses türü algılama çalışmıyor; bu yüzden tüm sesler ortam sesi renginde gösteriliyor. Görselleştirmeyi kapatıp yeniden açmayı deneyin.</string>
     <string name="classify_title">Ses türlerini seçin</string>
@@ -157,7 +157,7 @@
     <string name="classify_filter_all">Tümü</string>
     <string name="classify_filter_changed">Değiştirilenler</string>
     <string name="sound_type_ambient">Ortam sesi</string>
-    <string name="sound_type_speech">Konuşma</string>
+    <string name="sound_type_speech">İnsan sesleri</string>
     <string name="sound_type_danger">Tehlike sesi</string>
     <string name="classify_type_default">%1$s (varsayılan)</string>
     <string name="classify_changed_from">Varsayılan: %1$s</string>
@@ -237,7 +237,7 @@
     <!-- Accessibility -->
     <string name="cd_pick_color">Renk seçiciyi aç</string>
     <string name="cd_color_ambient">Ortam sesi rengi</string>
-    <string name="cd_color_speech">Konuşma rengi</string>
+    <string name="cd_color_speech">İnsan seslerinin rengi</string>
     <string name="cd_color_danger">Tehlike sesi rengi</string>
     <string name="cd_expand">Genişlet</string>
     <string name="cd_collapse">Daralt</string>
@@ -310,12 +310,12 @@
     <string name="help_modes_notification">Görselleştirme çalışırken gösterilen bildirimi genişleterek, uygulamayı açmadan modu değiştirebilirsiniz.</string>
 
     <string name="help_sound_title">Ses türleri ve titreşim</string>
-    <string name="help_sound_kinds">Yapay zeka, duyduğunuz sesleri ortam sesleri, konuşma ve tehlike sesleri olarak ayırır. Varsayılan olarak ortam sesleri beyaz, konuşma sarı, tehlike sesleri ise kırmızı renkte gösterilir. Her türün gösterilip gösterilmeyeceğini “Ayarlar” sekmesinden seçebilir, rengini ise “Ayrıntılı” görünümünden değiştirebilirsiniz.</string>
+    <string name="help_sound_kinds">Yapay zeka, duyduğunuz sesleri ortam sesleri, insan sesleri ve tehlike sesleri olarak ayırır. Varsayılan olarak ortam sesleri beyaz, insan sesleri sarı, tehlike sesleri ise kırmızı renkte gösterilir. Her türün gösterilip gösterilmeyeceğini “Ayarlar” sekmesinden seçebilir, rengini ise “Ayrıntılı” görünümünden değiştirebilirsiniz.</string>
     <string name="help_sound_classify_groups">“Sesler” sekmesinde benzer sesler gruplanır ve her grubun hangi türden sayılacağını siz seçersiniz. Örneğin “Kapı zili” grubunu tehlike sesi yaparsanız yapay zeka bir kapı zili veya kapıya vurma sesi tanıdığında bu ses tehlike sesi rengini ve titreşimini alır. Ancak yeni tehlike sesi yaptığınız bir ses, yalnızca yapay zekanın türü belirlemek için yaptığı oylamaya katılır; bu yüzden her kapı zilinin tehlike sesi olarak gösterileceği anlamına gelmez. Her sesi ayrı olarak değiştirmek için gelişmiş modu açın.</string>
     <string name="help_sound_danger">Bir tehlike sesi (ör. silah sesi) algılandığında renk yavaşça geçiş yapmak yerine anında değişir.</string>
     <string name="help_sound_haptic">Titreşim, ekrana bakmıyorken bile sizi uyarır. Başlangıçta yalnızca tehlike sesleri için titreşim açıktır. Her tür için “Basit” görünümünde Kapalı, Zayıf veya Güçlü seçeneklerinden birini, “Ayrıntılı” görünümünde ise bir mod (Kapalı, Yavaş, Orta, Hızlı, Sürekli) ve yoğunluk seçebilirsiniz.</string>
     <string name="help_sound_haptic_rule">Titreşim yalnızca ekranda gösterilen türler için çalışır. Telefon, o türden bir ses sürdüğü sürece titreşir ve ses durunca durur. Orta her yarım saniyede bir atar, Yavaş bunun yarı hızında, Hızlı ise iki katı hızında atar; Sürekli ise ara vermeden titreşir. Her modda titreşim seçtiğiniz yoğunlukta kalır.</string>
-    <string name="help_sound_haptic_external">Dış ses modunda telefon, kendi titreşimini ses sanmamak için bir sesin sürüp sürmediğini yalnızca atımlar arasındaki aralarda kontrol eder. Bu yüzden titreşim, ses durduktan sonra kısa bir süre daha devam edebilir; bu süre genellikle bir saniyeden kısadır. Bu aralar yeterince uzun olsun diye bu modda konuşma için en fazla Yavaş, tehlike sesleri için en fazla Orta seçebilirsiniz; ortam sesleri için ise titreşim olmaz, çünkü çevrenizde her zaman bir ses vardır. Daha hızlı bir mod seçili türler, seçilebilen en hızlı modla titreşir. Dış ses modunu kapattığınızda bu türler yeniden ayarladığınız gibi titreşir.</string>
+    <string name="help_sound_haptic_external">Dış ses modunda telefon, kendi titreşimini ses sanmamak için bir sesin sürüp sürmediğini yalnızca atımlar arasındaki aralarda kontrol eder. Bu yüzden titreşim, ses durduktan sonra kısa bir süre daha devam edebilir; bu süre genellikle bir saniyeden kısadır. Bu aralar yeterince uzun olsun diye bu modda insan sesleri için en fazla Yavaş, tehlike sesleri için en fazla Orta seçebilirsiniz; ortam sesleri için ise titreşim olmaz, çünkü çevrenizde her zaman bir ses vardır. Daha hızlı bir mod seçili türler, seçilebilen en hızlı modla titreşir. Dış ses modunu kapattığınızda bu türler yeniden ayarladığınız gibi titreşir.</string>
 
     <string name="help_notes_title">Bilmeniz gerekenler</string>
     <string name="help_note_direction">Uygulama sağı ve solu ayırt edebilir, ancak önü ve arkayı ayırt edemez. Ekranın üst ve alt kısmındaki grafikler, her iki tarafta eşit duyulan sesleri ve uzamsal etkiyi gösterir.</string>
@@ -339,7 +339,7 @@
     <string name="help_faq_no_graphic_a_external">Mikrofonun engellenmediğinden emin olun. Bir görüşme sırasında, başka bir uygulama mikrofonu kullanırken veya mikrofon Hızlı Ayarlar\'dan engellenmişse hiçbir ses gelmez; “Ana sayfa” sekmesi ve çalışırken gösterilen bildirim bunu size haber verir. Kısık sesler pek görünmüyorsa “Ana sayfa” sekmesinden mikrofon hassasiyetini artırın. Ayrıca “Ayarlar” sekmesinde o an çalan ses türünün gösteriminin kapalı olmadığından ve “Ayrıntılı” görünümünde “Opaklık” değerinin çok düşük olmadığından emin olun.</string>
     <string name="help_faq_no_vibration_q">Telefon titreşmiyor.</string>
     <string name="help_faq_no_vibration_answer">Ayarlar’daki “Ses türleri” bölümünde, ilgili tür için hem gösterme ayarının hem de “Titreşim” ayarının açık olduğundan emin olun. Ekran kapalıyken uygulama varsayılan olarak duraklar; bu sırada da titreşim uyarısı almak için Ayarlar’da, “Ayrıntılı” görünümündeki “Pil” bölümünden “Ekran kapalıyken duraklat” ayarını kapatın. Ses türü algılama çalışmadığı sürece yalnızca yüksek sesler, tehlike seslerinin ayarıyla titreşir. Telefonunuzun ayarlarında titreşim kapatılmışsa telefon titreşmeyebilir. Telefonunuzdaki sesi görselleştirirken medya ses düzeyi çok düşükse biraz açın.</string>
-    <string name="help_faq_no_vibration_answer_external">Ayarlar’daki “Ses türleri” bölümünde, ilgili tür için hem gösterme ayarının hem de “Titreşim” ayarının açık olduğundan emin olun. Dış ses modunda kapı zili gibi ortam sesleri için titreşim olmaz. Böyle bir ses için titreşim almak istiyorsanız “Sesler” sekmesinde o sesi tehlike sesi veya konuşma yapın. Konuşma en fazla Yavaş modda, tehlike sesleri en fazla Orta modda titreşir. Bir görüşme sırasında, başka bir uygulama mikrofonu kullanırken veya mikrofon Hızlı Ayarlar\'dan engellenmişse hiçbir ses gelmez; “Ana sayfa” sekmesi ve çalışırken gösterilen bildirim bunu size haber verir. “Ana sayfa” sekmesindeki mikrofon hassasiyetini varsayılan kademenin (soldan 4.) altına indirdiyseniz yeniden yükseltin. Yapay zekanın duyamayacağı kadar kısık seslerde, hassasiyeti daha da artırdığınızda sesler grafikte görünse bile titreşim olmaz. Böyle durumlarda telefonu sesin geldiği yere yakın tutun ve mikrofonun üzerini kapatmayın. Ses türü algılama çalışmadığı sürece yalnızca yüksek sesler, tehlike seslerinin ayarıyla ve en fazla Orta modda titreşir. Bu durumda neyin yüksek ses sayılacağını mikrofon hassasiyeti belirler. Telefonunuzun ayarlarında titreşim kapatılmışsa telefon titreşmeyebilir.</string>
+    <string name="help_faq_no_vibration_answer_external">Ayarlar’daki “Ses türleri” bölümünde, ilgili tür için hem gösterme ayarının hem de “Titreşim” ayarının açık olduğundan emin olun. Dış ses modunda kapı zili gibi ortam sesleri için titreşim olmaz. Böyle bir ses için titreşim almak istiyorsanız “Sesler” sekmesinde o sesi tehlike sesi veya insan sesi yapın. İnsan sesleri en fazla Yavaş modda, tehlike sesleri en fazla Orta modda titreşir. Bir görüşme sırasında, başka bir uygulama mikrofonu kullanırken veya mikrofon Hızlı Ayarlar\'dan engellenmişse hiçbir ses gelmez; “Ana sayfa” sekmesi ve çalışırken gösterilen bildirim bunu size haber verir. “Ana sayfa” sekmesindeki mikrofon hassasiyetini varsayılan kademenin (soldan 4.) altına indirdiyseniz yeniden yükseltin. Yapay zekanın duyamayacağı kadar kısık seslerde, hassasiyeti daha da artırdığınızda sesler grafikte görünse bile titreşim olmaz. Böyle durumlarda telefonu sesin geldiği yere yakın tutun ve mikrofonun üzerini kapatmayın. Ses türü algılama çalışmadığı sürece yalnızca yüksek sesler, tehlike seslerinin ayarıyla ve en fazla Orta modda titreşir. Bu durumda neyin yüksek ses sayılacağını mikrofon hassasiyeti belirler. Telefonunuzun ayarlarında titreşim kapatılmışsa telefon titreşmeyebilir.</string>
     <string name="help_faq_install_q">Yeni sürüm yüklenmiyor.</string>
     <string name="help_faq_install_a">Başka bir yerde derlenen APK farklı bir imzaya sahip olduğundan mevcut uygulamanın üzerine yüklenemez. Önce mevcut uygulamayı kaldırın, ardından yeni sürümü yükleyin. Bu işlem ayarlarınızı sıfırlar.</string>
     <string name="help_faq_battery_q">Çok pil harcıyor mu?</string>
