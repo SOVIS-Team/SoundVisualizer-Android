@@ -33,20 +33,52 @@ class AiDebugTextTest {
     private fun format(result: AiClassificationResult?, nowMs: Long = 1_200L) =
         AiDebugText.format(result, nowMs, level = 0.14f, shown = true, aiAvailable = true)
 
-    @Test fun `조기 표시의 첫 줄은 기본 사람 소리 이름 어느 것이 와도 한 줄에 든다`() {
-        // 첫 줄은 오버레이가 "종류 ● 이름 확신도" 로 붙인다(점과 양옆 여백을 세 칸으로 센다). 조기 표시는 종류가 "SPEECH ~PREVIEW" 로
-        // 길어지지만, 사용자 지정이 하나라도 있으면 쓰지 않으므로 이름은 늘 기본 종류가 사람 소리인 것이다. 그 가운데 가장 긴 이름
-        // (Hubbub, speech noise, speech babble)이 정확히 한 줄을 채운다. 사람 소리에 더 긴 이름을 넣으면 여기서 걸린다(#456).
-        val names = checkNotNull(javaClass.classLoader).getResourceAsStream("ai/yamnet_class_map.csv").use {
+    private fun classNames(): List<String> =
+        checkNotNull(javaClass.classLoader).getResourceAsStream("ai/yamnet_class_map.csv").use {
             com.example.soundvisualizer.ai.YamnetCoarseClassifier.loadClassNames(checkNotNull(it))
         }
-        val speech = names.filter { com.example.soundvisualizer.ai.YamnetThreeClassMapper.mapDisplayNameToCoarse(it) == AiClassification.SPEECH }
-        assertTrue("사람 소리 이름을 찾지 못했다", speech.size >= 30)
-        for (name in speech) {
+
+    private fun headerColumns(lines: AiDebugLines) =
+        lines.coarse.length + AiDebugText.HEADER_DOT_COLUMNS + lines.label.length + 1 + lines.confidence.length
+
+    @Test fun `조기 표시의 첫 줄은 어느 이름이 실려도 한 줄에 든다`() {
+        // 첫 줄은 오버레이가 "종류 ● 이름 확신도" 로 붙인다. 조기 표시는 종류가 "SPEECH ~PREVIEW" 로 여덟 자 길다.
+        // 이름은 그 프레임의 1위 이름이고 종류는 상위 3개의 투표라, 1위가 환경음 이름이어도 2·3위의 사람 소리가 합쳐 이기면 그 이름이
+        // 실린다. #456 의 시험은 "이름은 늘 사람 소리 이름"이라고 잘못 가정해, "Livestock, farm animals, working animals" 가 실리면
+        // 63자가 되어 두 줄로 꺾이는 것을 놓쳤다(#461). 521개 이름을 모두 넣어 본다.
+        val names = classNames()
+        assertEquals(521, names.size)
+        var longest = 0
+        var shortened = 0
+        for (name in names) {
             val lines = format(result(coarse = AiClassification.SPEECH, display = name, confidence = 0.99f).copy(speechPreview = true))
             assertEquals("SPEECH ~PREVIEW", lines.coarse)
-            val header = lines.coarse.length + 3 + lines.label.length + 1 + lines.confidence.length
+            val header = headerColumns(lines)
             assertTrue("$header: ${lines.coarse} ● ${lines.label} ${lines.confidence}", header <= AiDebugText.HUD_MAX_COLUMNS)
+            longest = maxOf(longest, header)
+            if (lines.label != name) {
+                shortened++
+                assertTrue(lines.label, lines.label.endsWith(AiDebugText.ELLIPSIS))
+                assertTrue(lines.label, name.startsWith(lines.label.dropLast(AiDebugText.ELLIPSIS.length)))
+            }
+        }
+        assertEquals(AiDebugText.HUD_MAX_COLUMNS, longest)
+        assertTrue("줄인 이름이 하나도 없다", shortened > 0)
+        // 기본 종류가 사람 소리인 이름은 가장 긴 것(35자)도 줄지 않는다. 조기 표시에 가장 자주 실리는 이름들이다.
+        fun preview(name: String) =
+            format(result(coarse = AiClassification.SPEECH, display = name, confidence = 0.99f).copy(speechPreview = true)).label
+        assertEquals("Hubbub, speech noise, speech babble", preview("Hubbub, speech noise, speech babble"))
+        assertEquals("Livestock, farm animals, working a" + AiDebugText.ELLIPSIS, preview("Livestock, farm animals, working animals"))
+    }
+
+    @Test fun `정규 결과의 첫 줄은 어느 이름도 줄이지 않는다`() {
+        // 정규 결과는 종류 칸이 짧아 가장 긴 이름(40자)도 한 줄에 든다. 채점할 때 보는 이름이 잘리면 안 된다.
+        for (coarse in listOf(AiClassification.AMBIENT, AiClassification.SPEECH, AiClassification.DANGER)) {
+            for (name in classNames()) {
+                val lines = format(result(coarse = coarse, display = name, confidence = 0.99f))
+                assertEquals(name, lines.label)
+                assertTrue(headerColumns(lines) <= AiDebugText.HUD_MAX_COLUMNS)
+            }
         }
     }
 

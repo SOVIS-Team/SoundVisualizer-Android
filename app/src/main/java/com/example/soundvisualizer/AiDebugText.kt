@@ -87,12 +87,14 @@ object AiDebugText {
             )
         }
 
+        val coarse = result.coarse.uppercase(Locale.US) + if (result.speechPreview) " ~PREVIEW" else ""
+        val confidence = twoDecimals(result.confidence)
         return AiDebugLines(
             colorLabel = result.coarse,
-            coarse = result.coarse.uppercase(Locale.US) + if (result.speechPreview) " ~PREVIEW" else "",
+            coarse = coarse,
             // 확정된 이름이 아직 없으면 빈 문자열이 온다. 임계값을 한 번도 넘지 못한 상태다.
-            label = result.display.ifEmpty { "(none)" },
-            confidence = twoDecimals(result.confidence),
+            label = fitHeaderLabel(result.display.ifEmpty { "(none)" }, coarse, confidence),
+            confidence = confidence,
             detail = detailOf(result, nowMs),
             verdict = verdictOf(result),
             timing = "$levelText   shown ${yesNo(shown)}   ${timingOf(result)}",
@@ -111,6 +113,21 @@ object AiDebugText {
      */
     private fun verdictOf(result: AiClassificationResult): String {
         return "cue ${yesNo(result.dangerCuePromoted)}"
+    }
+
+    /** 첫 줄에서 종류와 이름 사이의 점이 차지하는 칸 수. 점(8dp)과 그 양옆 여백(6dp 씩)이다. */
+    const val HEADER_DOT_COLUMNS = 3
+
+    /**
+     * 첫 줄("종류 ● 이름 확신도")이 [HUD_MAX_COLUMNS] 를 넘지 않게 이름을 줄인다(#461).
+     *
+     * 정규 결과는 가장 긴 이름(40자)도 들어가므로 줄지 않는다. 조기 표시는 종류 칸이 "SPEECH ~PREVIEW" 로 여덟 자 길고, 이름은 그
+     * 프레임의 1위 이름이라(종류는 상위 3개의 투표) 긴 환경음 이름이 실릴 수 있다. 그때 35자를 넘는 이름만 끝을 [ELLIPSIS] 로 줄인다.
+     * 그대로 두면 첫 줄이 두 줄로 꺾여 표시 높이가 흔들린다(#165). 기록(CSV)에는 온전한 이름이 남는다.
+     */
+    private fun fitHeaderLabel(label: String, coarse: String, confidence: String): String {
+        val room = HUD_MAX_COLUMNS - coarse.length - HEADER_DOT_COLUMNS - 1 - confidence.length
+        return if (label.length <= room) label else label.take(room - ELLIPSIS.length) + ELLIPSIS
     }
 
     /** 고정폭 칸에 맞춘 이름. 짧으면 공백으로 채워 확률이 한 줄에 세로로 맞는다. */
