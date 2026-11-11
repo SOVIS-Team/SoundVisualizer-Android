@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">O som do seu jogo ou vídeo é desenhado nas bordas da tela. Quanto mais alto o som, maior o desenho. Só aparece o som que toca no seu celular. Os sons ao seu redor não são captados.</string>
     <string name="tutorial_sound_body_external">O modo de som externo está ligado, então os sons ao seu redor captados pelo microfone são desenhados nas bordas da tela. Quanto mais alto o som, maior o desenho. Neste modo, o som que toca no seu celular não aparece.</string>
     <string name="tutorial_direction_title">Diferencia esquerda e direita</string>
-    <string name="tutorial_direction_title_external">Por enquanto, a direção fica no centro</string>
     <string name="tutorial_direction_body">Um som da esquerda é desenhado maior do lado esquerdo, e um som da direita, do lado direito. O app não diferencia frente e trás.</string>
-    <string name="tutorial_direction_body_external">No modo de som externo, o app ainda não mostra de onde vem um som e desenha todos os sons no centro. Com o som do celular, um som da esquerda é desenhado maior do lado esquerdo.</string>
     <string name="tutorial_types_title">Cada tipo de som tem sua própria cor</string>
     <string name="tutorial_types_body">A IA separa os sons em três tipos e desenha cada um com uma cor diferente. Você pode mudar as cores em “Detalhado”, na aba Ajustes.</string>
     <string name="tutorial_type_ambient">Sons ambientes</string>

@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">Der Ton Ihres Spiels oder Videos wird an den Bildschirmrändern dargestellt. Je lauter er ist, desto größer wird er gezeichnet. Angezeigt wird nur der Ton, der auf Ihrem Smartphone wiedergegeben wird. Geräusche um Sie herum werden nicht erfasst.</string>
     <string name="tutorial_sound_body_external">Der Modus für Außengeräusche ist eingeschaltet. Daher werden die Geräusche um Sie herum, die das Mikrofon hört, an den Bildschirmrändern dargestellt. Je lauter ein Geräusch ist, desto größer wird es gezeichnet. Der auf Ihrem Smartphone wiedergegebene Ton wird in diesem Modus nicht angezeigt.</string>
     <string name="tutorial_direction_title">Unterscheidet links und rechts</string>
-    <string name="tutorial_direction_title_external">Richtung vorerst nur in der Mitte</string>
     <string name="tutorial_direction_body">Ein Geräusch von links wird auf der linken Seite größer dargestellt, ein Geräusch von rechts auf der rechten Seite. Vorne und hinten kann die App nicht unterscheiden.</string>
-    <string name="tutorial_direction_body_external">Im Modus für Außengeräusche zeigt die App noch nicht, aus welcher Richtung ein Geräusch kommt, und stellt alle Geräusche in der Mitte dar. Beim Ton Ihres Smartphones wird ein Geräusch von links auf der linken Seite größer dargestellt.</string>
     <string name="tutorial_types_title">Jede Geräuschart hat ihre eigene Farbe</string>
     <string name="tutorial_types_body">Die KI teilt Geräusche in drei Arten ein und stellt jede Art in einer eigenen Farbe dar. Die Farben können Sie im Tab „Einstellungen“ unter „Detailliert“ ändern.</string>
     <string name="tutorial_type_ambient">Umgebungsgeräusche</string>

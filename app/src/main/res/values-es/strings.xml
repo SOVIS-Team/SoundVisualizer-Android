@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">El sonido de tu juego o video se dibuja en los bordes de la pantalla. Cuanto más fuerte es, más grande se dibuja. Solo se muestra el sonido que se reproduce en tu teléfono. Los sonidos de tu entorno no se captan.</string>
     <string name="tutorial_sound_body_external">El modo de sonido externo está activado, así que los sonidos de tu entorno que capta el micrófono se dibujan en los bordes de la pantalla. Cuanto más fuerte es un sonido, más grande se dibuja. En este modo no se muestra el sonido que se reproduce en tu teléfono.</string>
     <string name="tutorial_direction_title">Distingue la izquierda de la derecha</string>
-    <string name="tutorial_direction_title_external">Por ahora, la dirección se muestra en el centro</string>
     <string name="tutorial_direction_body">Un sonido que viene de la izquierda se dibuja más grande a la izquierda, y uno que viene de la derecha, a la derecha. La app no distingue entre delante y detrás.</string>
-    <string name="tutorial_direction_body_external">En el modo de sonido externo, la app todavía no muestra de dónde viene un sonido y dibuja todos los sonidos en el centro. Con el sonido de tu teléfono, un sonido que viene de la izquierda se dibuja más grande a la izquierda.</string>
     <string name="tutorial_types_title">Cada tipo de sonido tiene su color</string>
     <string name="tutorial_types_body">La IA clasifica los sonidos en tres tipos y dibuja cada uno con su propio color. Puedes cambiar los colores en “Detallado”, en la pestaña Ajustes.</string>
     <string name="tutorial_type_ambient">Sonido ambiente</string>

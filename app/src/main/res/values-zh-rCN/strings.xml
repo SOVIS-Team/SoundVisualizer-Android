@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">游戏或视频中的声音会以图形显示在屏幕边缘。声音越大，图形就越大。只显示手机上播放的声音。本应用不会捕获您周围的声音。</string>
     <string name="tutorial_sound_body_external">外部声音模式已开启，因此麦克风听到的您周围的声音会以图形显示在屏幕边缘。声音越大，图形就越大。在此模式下，不显示手机上播放的声音。</string>
     <string name="tutorial_direction_title">可以分辨左右</string>
-    <string name="tutorial_direction_title_external">方向目前只显示在中间</string>
     <string name="tutorial_direction_body">来自左边的声音会在左侧显示得更大，来自右边的声音会在右侧显示得更大。无法分辨前后。</string>
-    <string name="tutorial_direction_body_external">在外部声音模式下，应用暂时不会显示声音来自哪一侧，所有声音都显示在中间。对于手机内播放的声音，来自左边的声音会在左侧显示得更大。</string>
     <string name="tutorial_types_title">用颜色区分声音类型</string>
     <string name="tutorial_types_body">AI 会将声音分为三种类型，并用不同的颜色显示。您可以在“设置”标签页的“详细设置”中更改颜色。</string>
     <string name="tutorial_type_ambient">环境音</string>

@@ -44,9 +44,7 @@
     <string name="tutorial_sound_body">Suara dari game atau video Anda digambar di sepanjang tepi layar. Makin keras suaranya, makin besar gambarnya. Hanya suara yang diputar di ponsel Anda yang ditampilkan. Aplikasi ini tidak mendengarkan suara di sekitar Anda.</string>
     <string name="tutorial_sound_body_external">Mode suara luar sedang aktif, jadi suara di sekitar Anda yang ditangkap mikrofon digambar di sepanjang tepi layar. Makin keras suaranya, makin besar gambarnya. Di mode ini, suara yang diputar di ponsel Anda tidak ditampilkan.</string>
     <string name="tutorial_direction_title">Membedakan kiri dan kanan</string>
-    <string name="tutorial_direction_title_external">Arah masih ditampilkan di tengah</string>
     <string name="tutorial_direction_body">Suara dari kiri digambar lebih besar di sisi kiri, dan suara dari kanan di sisi kanan. Aplikasi tidak dapat membedakan depan dan belakang.</string>
-    <string name="tutorial_direction_body_external">Dalam Mode suara luar, aplikasi belum menunjukkan dari mana suara berasal dan menggambar semua suara di tengah. Untuk suara yang diputar di ponsel, suara dari kiri digambar lebih besar di sisi kiri.</string>
     <string name="tutorial_types_title">Setiap jenis suara punya warnanya sendiri</string>
     <string name="tutorial_types_body">AI mengelompokkan suara menjadi tiga jenis dan menggambar setiap jenis dengan warna yang berbeda. Anda dapat mengubah warnanya di tampilan “Detail” pada tab Setelan.</string>
     <string name="tutorial_type_ambient">Suara latar</string>
