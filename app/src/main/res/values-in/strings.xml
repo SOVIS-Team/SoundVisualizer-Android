@@ -50,7 +50,7 @@
     <string name="tutorial_type_ambient">Suara latar</string>
     <string name="tutorial_type_ambient_examples">Musik, hujan, dan suara lainnya</string>
     <string name="tutorial_type_speech">Suara manusia</string>
-    <string name="tutorial_type_speech_examples">Suara manusia</string>
+    <string name="tutorial_type_speech_examples">Percakapan</string>
     <string name="tutorial_type_danger">Suara bahaya</string>
     <string name="tutorial_type_danger_examples">Tembakan, ledakan, sirene</string>
     <string name="tutorial_vibration_title">Suara bahaya juga membuat ponsel bergetar</string>

@@ -50,7 +50,7 @@
     <string name="tutorial_type_ambient">เสียงแวดล้อม</string>
     <string name="tutorial_type_ambient_examples">เพลง เสียงฝน และเสียงอื่นทั้งหมด</string>
     <string name="tutorial_type_speech">เสียงคน</string>
-    <string name="tutorial_type_speech_examples">เสียงคน</string>
+    <string name="tutorial_type_speech_examples">เสียงพูด</string>
     <string name="tutorial_type_danger">เสียงอันตราย</string>
     <string name="tutorial_type_danger_examples">เสียงปืน เสียงระเบิด เสียงไซเรน</string>
     <string name="tutorial_vibration_title">เมื่อมีเสียงอันตราย โทรศัพท์จะสั่นด้วย</string>

@@ -50,7 +50,7 @@
     <string name="tutorial_type_ambient">環境音</string>
     <string name="tutorial_type_ambient_examples">音楽・雨音など、その他の音</string>
     <string name="tutorial_type_speech">人の声</string>
-    <string name="tutorial_type_speech_examples">人の声</string>
+    <string name="tutorial_type_speech_examples">話し声</string>
     <string name="tutorial_type_danger">危険音</string>
     <string name="tutorial_type_danger_examples">銃声・爆発音・サイレン</string>
     <string name="tutorial_vibration_title">危険音は振動でもお知らせします</string>
